@@ -52,4 +52,8 @@ public class Q19Solution {
         }
         System.out.print(" ]");
     }
+
+    // 不带头结点版本可以查看leetcode 提交记录 https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/submissions/
+    // 多增加一个 ListNode preHead = new ListNode();
+    // preHead.next = head; 手动构造一个带头结点的链表即可完成
 }
