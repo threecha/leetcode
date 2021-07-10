@@ -14,14 +14,14 @@ package com.threecha.hot100.q34;
  */
 public class Q34Solution {
     public static void main(String[] args) {
-        int[] nums = new int[]{5,7,7,8,8,10};
-        searchRange(nums,1);
+        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
+        searchRange(nums, 1);
     }
 
     private static int[] searchRange(int[] nums, int target) {
         int[] result = new int[2];
-        result[0] = binarySearch(nums, 1, true);
-        result[1] = binarySearch(nums, 1, false);
+        result[0] = binarySearch(nums, target, true);
+        result[1] = binarySearch(nums, target, false);
         return result;
     }
 
@@ -40,9 +40,11 @@ public class Q34Solution {
                 left = mid + 1;
             } else {
                 // 找到目标值的情况
+                result = mid;
                 if (leftOrRight) {
                     //找左端点 则需要从右侧逼近
-                    right = mid - 1; // 在mid 左侧二分 若还能找到说明有更小的更新，若无法找到说明当前的mid 就是左端点
+                    // 在mid 左侧二分 若还能找到说明有更小的更新，若无法找到说明当前的mid 就是左端点
+                    right = mid - 1;
                 } else {
                     left = mid + 1;
                 }
