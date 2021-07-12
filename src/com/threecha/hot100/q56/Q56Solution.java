@@ -31,7 +31,6 @@ public class Q56Solution {
                     // 当前段被包含在上一段里 因为前面做了排序处理 所以每一段的开头数据一定是按顺序排列
                     // 不做任何处理即可
                     intervals[k] = param;
-                    continue;
                 }else {
                     //当前段和上一段部分重叠 对当前段进行更新
                     intervals[k][0] = param[0];
